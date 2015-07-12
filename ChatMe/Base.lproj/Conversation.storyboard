@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V4J-eI-b4d">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+    </dependencies>
+    <scenes>
+        <!--可以进入测试界面-->
+        <scene sceneID="old-bc-PWX">
+            <objects>
+                <viewController id="2AO-32-EUR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5hX-Y3-hkM"/>
+                        <viewControllerLayoutGuide type="bottom" id="bCt-d6-JHo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZeY-SE-30a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="测试" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3K-zk-hAj">
+                                <rect key="frame" x="275" y="285" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C3K-zk-hAj" firstAttribute="centerX" secondItem="ZeY-SE-30a" secondAttribute="centerX" id="ZXJ-Mt-WFx"/>
+                            <constraint firstItem="C3K-zk-hAj" firstAttribute="centerY" secondItem="ZeY-SE-30a" secondAttribute="centerY" id="bTo-4J-gOU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="可以进入测试界面" id="x3J-2u-M5R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hS-cX-URf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="-1612"/>
+        </scene>
+        <!--与好友聊天中-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ConversationViewController" customModule="ChatMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="与好友聊天中" id="8ee-HZ-b5B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="-750"/>
+        </scene>
+        <!--会话-->
+        <scene sceneID="93O-nu-uDm">
+            <objects>
+                <viewController id="YPZ-Bc-SDB" customClass="ConversationListViewController" customModule="ChatMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xwl-zK-vpb"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8l-7N-CXI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cGI-MV-bc1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="会话" id="xHU-lo-5rl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8IT-iy-Zcy">
+                            <connections>
+                                <action selector="showMenu:" destination="YPZ-Bc-SDB" id="aQP-pp-vxb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="onSelectCell" id="MDL-bA-pdW"/>
+                        <segue destination="2AO-32-EUR" kind="show" identifier="test" id="h2L-XK-gIj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6e-Wo-o2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427" y="-750"/>
+        </scene>
+        <!--会话-->
+        <scene sceneID="Veo-nY-aSl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V4J-eI-b4d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="会话" image="coversation" id="qqh-cj-laa"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Jxj-Rn-abr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YPZ-Bc-SDB" kind="relationship" relationship="rootViewController" id="NCX-lk-9c0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9K-4k-Var" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-385" y="-750"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coversation" width="29" height="22"/>
+    </resources>
+</document>

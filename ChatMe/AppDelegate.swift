@@ -9,13 +9,56 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
 
     var window: UIWindow?
 
+    
+    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
+        let userInfo = RCUserInfo()
+        userInfo.userId = userId
+        userInfo.name = "蒋海兵"
+        userInfo.portraitUri = "http://i2.tietuku.com/b8fe588cbb607b70s.jpg"
+        return completion(userInfo)
+    }
 
+    func connetServer(complete:() -> Void){
+        //初始化appkey
+        RCIM.sharedRCIM().initWithAppKey("kj7swf8o7ceu2")
+        //用token连接
+        let token = "+NkHI3DYI1hM3al2A7lei5V/yDxb2oo2Syx1v6BQK1o+T/AkkpI1r6I6UZm48ixLXA+Hd/Ngk5etBpUtZIgf14H54pL6QJx3"
+        
+        RCIM.sharedRCIM().connectWithToken(token, success: { (_) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                complete()
+            })
+            
+            let currentUser = RCUserInfo(userId: "jianghaibing", name: "蒋海兵", portrait: "http://i2.tietuku.com/b8fe588cbb607b70s.jpg")
+            RCIMClient.sharedRCIMClient().currentUserInfo = currentUser
+            
+            
+            NSUserDefaults.standardUserDefaults().setObject(token, forKey: "kDeviceToken")
+            }, error: { (_) -> Void in
+                print("连接失败")
+            }) { () -> Void in
+                print("token失效或错误")
+        }
+        
+        //查询保存的token
+        
+        _ = NSUserDefaults.standardUserDefaults().objectForKey("kDeviceToken") as? String
+        
+
+    }
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        RCIM.sharedRCIM().userInfoDataSource = self
+        
+        
         return true
     }
 
