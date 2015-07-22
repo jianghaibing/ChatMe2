@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6862CF5EFCA84D6257B7E66F0D63AFC88B79395A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6862CF5EFCA84D6257B7E66F0D63AFC88B79395A" : 0,
+    "75063E91C3EB8B44DA0A178660006B40D62895F4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BD77AB65-4F35-4E9A-8158-879ED6B35C95",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6862CF5EFCA84D6257B7E66F0D63AFC88B79395A" : "ChatMe\/",
+    "75063E91C3EB8B44DA0A178660006B40D62895F4" : "ChatMe\/ChatMe\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ChatMe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ChatMe.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jianghaibing\/ChatMe2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6862CF5EFCA84D6257B7E66F0D63AFC88B79395A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jianghaibing\/chatme1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75063E91C3EB8B44DA0A178660006B40D62895F4"
+    }
+  ]
+}

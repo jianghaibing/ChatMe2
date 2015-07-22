@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ConversationListViewController: RCConversationListViewController {
 
     @IBAction func showMenu(sender: UIBarButtonItem) {

@@ -13,6 +13,8 @@
 		0905FD761B512DE800D53B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0905FD751B512DE800D53B28 /* Assets.xcassets */; };
 		0905FD791B512DE800D53B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0905FD771B512DE800D53B28 /* LaunchScreen.storyboard */; };
 		0905FD811B5134DD00D53B28 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0905FD801B5134DD00D53B28 /* Podfile */; };
+		092BD8121B5FE0D500CA3EBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BD8111B5FE0D500CA3EBC /* LoginViewController.swift */; };
+		092BD8141B5FE41200CA3EBC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BD8131B5FE41200CA3EBC /* RoundImageView.swift */; };
 		09AA1B741B515C7E004F2159 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B721B515C7E004F2159 /* Conversation.storyboard */; };
 		09AA1B771B515CAE004F2159 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B751B515CAE004F2159 /* Contact.storyboard */; };
 		09AA1B7A1B515CD6004F2159 /* Server.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B781B515CD6004F2159 /* Server.storyboard */; };
@@ -30,6 +32,8 @@
 		0905FD781B512DE800D53B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0905FD7A1B512DE800D53B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0905FD801B5134DD00D53B28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		092BD8111B5FE0D500CA3EBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		092BD8131B5FE41200CA3EBC /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		09AA1B6C1B513B5B004F2159 /* ChatMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		09AA1B731B515C7E004F2159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Conversation.storyboard; sourceTree = "<group>"; };
 		09AA1B761B515CAE004F2159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				0905FD6E1B512DE800D53B28 /* AppDelegate.swift */,
 				0905FD701B512DE800D53B28 /* ConversationViewController.swift */,
 				09AA1B7E1B516080004F2159 /* ConversationListViewController.swift */,
+				092BD8111B5FE0D500CA3EBC /* LoginViewController.swift */,
+				092BD8131B5FE41200CA3EBC /* RoundImageView.swift */,
 				0905FD721B512DE800D53B28 /* Main.storyboard */,
 				09AA1B7B1B515CEF004F2159 /* About.storyboard */,
 				09AA1B781B515CD6004F2159 /* Server.storyboard */,
@@ -219,6 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092BD8141B5FE41200CA3EBC /* RoundImageView.swift in Sources */,
+				092BD8121B5FE0D500CA3EBC /* LoginViewController.swift in Sources */,
 				09AA1B7F1B516080004F2159 /* ConversationListViewController.swift in Sources */,
 				0905FD711B512DE800D53B28 /* ConversationViewController.swift in Sources */,
 				0905FD6F1B512DE800D53B28 /* AppDelegate.swift in Sources */,
