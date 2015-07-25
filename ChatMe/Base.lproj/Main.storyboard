@@ -21,6 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-oU-5yP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fRs-Kd-154">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="sVp-hn-cci" customClass="RoundImageView" customModule="ChatMe" customModuleProvider="target">
                                 <rect key="frame" x="260" y="80" width="80" height="80"/>
                                 <constraints>
@@ -32,7 +40,7 @@
                                         <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
                                         <real key="value" value="0.5"/>
@@ -59,14 +67,14 @@
                                         <state key="normal" title="登录"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NqX-xP-5IY">
-                                <rect key="frame" x="242" y="330" width="125" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NqX-xP-5IY">
+                                <rect key="frame" x="238" y="250" width="125" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-I9-Jbd">
                                         <rect key="frame" x="0.0" y="5" width="68" height="21"/>
@@ -107,13 +115,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qPv-oU-5yP" secondAttribute="bottom" id="25B-GK-Ctb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NqX-xP-5IY" secondAttribute="trailing" id="2Im-DF-aNL"/>
+                            <constraint firstItem="gWe-6A-deN" firstAttribute="top" secondItem="qPv-oU-5yP" secondAttribute="bottom" id="4mp-qo-4AP"/>
                             <constraint firstItem="NqX-xP-5IY" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leadingMargin" id="9XS-qQ-mtp"/>
                             <constraint firstItem="5Xj-iH-c0C" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leading" id="AVJ-Rg-rhX"/>
                             <constraint firstItem="NqX-xP-5IY" firstAttribute="centerX" secondItem="lfj-xb-OPk" secondAttribute="centerX" id="AYE-6p-58N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S1V-7c-D3G" secondAttribute="trailing" id="ILf-uq-0Cu"/>
                             <constraint firstItem="S1V-7c-D3G" firstAttribute="top" secondItem="sVp-hn-cci" secondAttribute="bottom" constant="40" id="J9i-tf-7hT"/>
                             <constraint firstItem="gWe-6A-deN" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leadingMargin" id="JUf-Wv-wWU"/>
+                            <constraint firstItem="qPv-oU-5yP" firstAttribute="top" secondItem="S1V-7c-D3G" secondAttribute="bottom" id="KPG-aA-s2A"/>
                             <constraint firstItem="S1V-7c-D3G" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leadingMargin" id="LAU-3e-5Of"/>
                             <constraint firstItem="sVp-hn-cci" firstAttribute="top" secondItem="fjo-1i-Xxq" secondAttribute="bottom" constant="60" id="Zbt-UV-ekZ"/>
                             <constraint firstItem="S1V-7c-D3G" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leadingMargin" id="Zy2-u9-ppk"/>
@@ -125,6 +136,9 @@
                             <constraint firstItem="5Xj-iH-c0C" firstAttribute="top" secondItem="lfj-xb-OPk" secondAttribute="top" id="n13-2p-acB"/>
                             <constraint firstAttribute="trailing" secondItem="5Xj-iH-c0C" secondAttribute="trailing" id="nb9-CQ-njf"/>
                             <constraint firstItem="NqX-xP-5IY" firstAttribute="top" secondItem="S1V-7c-D3G" secondAttribute="bottom" constant="20" id="nzQ-w9-sXR"/>
+                            <constraint firstItem="qPv-oU-5yP" firstAttribute="leading" secondItem="lfj-xb-OPk" secondAttribute="leading" id="re8-Lb-Lbd"/>
+                            <constraint firstItem="qPv-oU-5yP" firstAttribute="top" secondItem="lfj-xb-OPk" secondAttribute="top" id="thN-Jh-MuO"/>
+                            <constraint firstAttribute="trailing" secondItem="qPv-oU-5yP" secondAttribute="trailing" id="umf-AM-NWP"/>
                             <constraint firstItem="sVp-hn-cci" firstAttribute="centerX" secondItem="lfj-xb-OPk" secondAttribute="centerX" id="zeG-62-cSV"/>
                         </constraints>
                         <variation key="default">
@@ -132,8 +146,10 @@
                                 <exclude reference="J9i-tf-7hT"/>
                                 <exclude reference="Zy2-u9-ppk"/>
                                 <exclude reference="fkW-23-d1R"/>
+                                <exclude reference="KPG-aA-s2A"/>
                                 <exclude reference="2Im-DF-aNL"/>
                                 <exclude reference="9XS-qQ-mtp"/>
+                                <exclude reference="4mp-qo-4AP"/>
                             </mask>
                         </variation>
                     </view>
