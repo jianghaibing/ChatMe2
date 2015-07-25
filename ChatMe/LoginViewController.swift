@@ -20,12 +20,21 @@ extension UIView {
 }
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,JSAnimatedImagesViewDataSource {
+    @IBOutlet weak var loginStackView: UIStackView!
+    @IBOutlet weak var background: JSAnimatedImagesView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.dataSource = self
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.loginStackView.axis = UILayoutConstraintAxis.Vertical
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +42,13 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func animatedImagesNumberOfImages(animatedImagesView: JSAnimatedImagesView!) -> UInt {
+        return 3
+    }
+    
+    func animatedImagesView(animatedImagesView: JSAnimatedImagesView!, imageAtIndex index: UInt) -> UIImage! {
+        return UIImage(named: "background\(index)")
+    }
 
     /*
     // MARK: - Navigation

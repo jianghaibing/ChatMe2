@@ -1,1 +1,1 @@
-../../../../RongCloudIMKit/Rong_Cloud_iOS_SDK_v2_2_1_dev/RongIMLib.framework/Headers/RCProfileNotificationMessage.h
+../../../../RongCloudIMKit/Rong_Cloud_iOS_SDK_v2_2_4_stable/RongIMLib.framework/Headers/RCProfileNotificationMessage.h

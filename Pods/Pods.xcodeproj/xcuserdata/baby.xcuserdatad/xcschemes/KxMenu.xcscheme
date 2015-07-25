@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86E6DD750DFD03AF830A1A55"
+               BlueprintIdentifier = "EFEACB8D7BADB4C97D2C6DE6"
                BuildableName = "libKxMenu.a"
                BlueprintName = "KxMenu"
                ReferencedContainer = "container:Pods.xcodeproj">

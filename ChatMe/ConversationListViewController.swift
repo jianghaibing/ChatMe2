@@ -85,7 +85,7 @@ class ConversationListViewController: RCConversationListViewController {
         self.refreshConversationTableViewIfNeeded()
 
 
-        setConversationAvatarStyle(RCUserAvatarStyle._USER_AVATAR_CYCLE)
+        setConversationAvatarStyle(RCUserAvatarStyle.USER_AVATAR_CYCLE)
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,7 +107,7 @@ class ConversationListViewController: RCConversationListViewController {
             destVC!.userName = conversationModel?.conversationTitle
             destVC!.conversationType = RCConversationType.ConversationType_PRIVATE
             destVC!.title = conversationModel?.conversationTitle
-            destVC!.setMessageAvatarStyle(._USER_AVATAR_CYCLE)
+            destVC!.setMessageAvatarStyle(.USER_AVATAR_CYCLE)
         }
        
         
