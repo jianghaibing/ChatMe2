@@ -27,6 +27,7 @@ class LoginViewController: UIViewController,JSAnimatedImagesViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         background.dataSource = self
+        
 
     }
     
@@ -34,7 +35,18 @@ class LoginViewController: UIViewController,JSAnimatedImagesViewDataSource {
         super.viewDidAppear(animated)
         UIView.animateWithDuration(0.5) { () -> Void in
             self.loginStackView.axis = UILayoutConstraintAxis.Vertical
+//            self.loginStackView.arrangedSubviews.first?.hidden = true
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     override func didReceiveMemoryWarning() {
