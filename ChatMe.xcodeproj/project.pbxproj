@@ -18,6 +18,7 @@
 		090C0EF31B6BBC6A00C26833 /* RegistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C0EF21B6BBC6A00C26833 /* RegistTableViewController.swift */; };
 		092BD8121B5FE0D500CA3EBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BD8111B5FE0D500CA3EBC /* LoginViewController.swift */; };
 		092BD8141B5FE41200CA3EBC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BD8131B5FE41200CA3EBC /* RoundImageView.swift */; };
+		099CC0A31B70FA5F001144A9 /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CC0A21B70FA5F001144A9 /* UITextBox.swift */; };
 		09AA1B741B515C7E004F2159 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B721B515C7E004F2159 /* Conversation.storyboard */; };
 		09AA1B771B515CAE004F2159 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B751B515CAE004F2159 /* Contact.storyboard */; };
 		09AA1B7A1B515CD6004F2159 /* Server.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA1B781B515CD6004F2159 /* Server.storyboard */; };
@@ -40,6 +41,7 @@
 		090C0EF21B6BBC6A00C26833 /* RegistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistTableViewController.swift; sourceTree = "<group>"; };
 		092BD8111B5FE0D500CA3EBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		092BD8131B5FE41200CA3EBC /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		099CC0A21B70FA5F001144A9 /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
 		09AA1B6C1B513B5B004F2159 /* ChatMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		09AA1B731B515C7E004F2159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Conversation.storyboard; sourceTree = "<group>"; };
 		09AA1B761B515CAE004F2159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
@@ -100,10 +102,19 @@
 				0905FD751B512DE800D53B28 /* Assets.xcassets */,
 				0905FD771B512DE800D53B28 /* LaunchScreen.storyboard */,
 				0905FD7A1B512DE800D53B28 /* Info.plist */,
-				09068D4D1B6D0FA6001EDA4E /* SwiftNotice.swift */,
+				099CC0A41B70FA74001144A9 /* 3thLib */,
 				09AA1B6C1B513B5B004F2159 /* ChatMe-Bridging-Header.h */,
 			);
 			path = ChatMe;
+			sourceTree = "<group>";
+		};
+		099CC0A41B70FA74001144A9 /* 3thLib */ = {
+			isa = PBXGroup;
+			children = (
+				09068D4D1B6D0FA6001EDA4E /* SwiftNotice.swift */,
+				099CC0A21B70FA5F001144A9 /* UITextBox.swift */,
+			);
+			name = 3thLib;
 			sourceTree = "<group>";
 		};
 		D4BD3A76DF7973D007E5F721 /* Pods */ = {
@@ -241,6 +252,7 @@
 				0905FD711B512DE800D53B28 /* ConversationViewController.swift in Sources */,
 				0905FD6F1B512DE800D53B28 /* AppDelegate.swift in Sources */,
 				09068D4E1B6D0FA6001EDA4E /* SwiftNotice.swift in Sources */,
+				099CC0A31B70FA5F001144A9 /* UITextBox.swift in Sources */,
 				090C0EF31B6BBC6A00C26833 /* RegistTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

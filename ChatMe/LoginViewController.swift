@@ -31,6 +31,11 @@ class LoginViewController: UIViewController,JSAnimatedImagesViewDataSource {
 
     }
     
+    @IBAction func login(sender: UIButton) {
+        performSegueWithIdentifier("showConversation", sender: self)
+    }
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animateWithDuration(0.5) { () -> Void in

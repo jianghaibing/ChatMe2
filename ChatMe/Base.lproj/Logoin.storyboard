@@ -70,6 +70,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="login:" destination="fDs-rB-HKh" eventType="touchUpInside" id="WwI-DC-rM8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -195,7 +198,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9P-WU-7SV">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9P-WU-7SV" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="121" y="0.0" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Gyu-VM-8zC"/>
@@ -218,7 +221,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8h-sf-CsI">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8h-sf-CsI" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="157" y="5" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="npA-uj-vIN"/>
@@ -241,7 +244,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJr-FR-3rj">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJr-FR-3rj" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="159" y="8" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6Lq-d7-sWw"/>
@@ -268,7 +271,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="所在地区" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-Bb-htX">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="所在地区" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-Bb-htX" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="121" y="0.0" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="aLv-RA-638"/>
@@ -291,7 +294,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码提示问题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Tr-m4e">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码提示问题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Tr-m4e" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="157" y="5" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="PST-C3-ocS"/>
@@ -314,7 +317,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="秘密提示答案" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFP-Zv-CMJ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="秘密提示答案" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFP-Zv-CMJ" customClass="UITextBox" customModule="ChatMe" customModuleProvider="target">
                                                     <rect key="frame" x="159" y="8" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="QML-oR-lns"/>
@@ -346,6 +349,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="IJr-FR-3rj" id="KEh-Ua-cuw"/>
+                        <outlet property="passwordTextField" destination="E8h-sf-CsI" id="jQW-F7-7BD"/>
+                        <outlet property="userNameTextField" destination="I9P-WU-7SV" id="0dh-yE-RmZ"/>
                         <outletCollection property="textFields" destination="I9P-WU-7SV" collectionClass="NSMutableArray" id="CgV-AM-HKL"/>
                         <outletCollection property="textFields" destination="E8h-sf-CsI" collectionClass="NSMutableArray" id="PpS-wa-Ljp"/>
                         <outletCollection property="textFields" destination="IJr-FR-3rj" collectionClass="NSMutableArray" id="Rit-Yc-ZXf"/>

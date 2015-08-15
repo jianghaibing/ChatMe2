@@ -11,6 +11,9 @@ import UIKit
 class RegistTableViewController: UITableViewController {
 
     @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     
     func checkRequiredTextFields() {
@@ -19,6 +22,14 @@ class RegistTableViewController: UITableViewController {
                 self.noticeError("必填项为空", autoClear: true, autoClearTime: 1)
             }
         }
+        
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let checkEmail = NSPredicate(format: "SELF MATCHES %@", regex)
+        guard checkEmail.evaluateWithObject(emailTextField.text) else {
+            noticeError("邮箱格式不对", autoClear: true, autoClearTime: 1)
+            return
+        }
+        
     }
     
     override func viewDidLoad() {
