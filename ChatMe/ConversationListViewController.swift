@@ -27,6 +27,7 @@ class ConversationListViewController: RCConversationListViewController {
         */
         //popmenu实现菜单
         
+        
         let items = [
             MenuItem(title: "会话", iconName: "coversation", glowColor: UIColor(red: 0.3, green:0.5 , blue: 0.6, alpha: 0.8), index: 0),
             MenuItem(title: "通讯录", iconName: "contact", glowColor: UIColor(red: 0.8, green:0.1 , blue: 0.3, alpha: 0.8), index: 1),

@@ -57,8 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,RCIMUserInfoDataSource {
         // Override point for customization after application launch.
         
         RCIM.sharedRCIM().userInfoDataSource = self
-        
-        
+        AVOSCloud.setApplicationId("HGkMMsGTxxJ8FJ42wK3cHb7H", clientKey: "wc6rMv5VdmKFOt1wLN6hGgku")
+        AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
     }
 

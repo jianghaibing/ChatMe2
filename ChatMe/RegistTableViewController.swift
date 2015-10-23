@@ -10,12 +10,19 @@ import UIKit
 
 class RegistTableViewController: UITableViewController {
 
-    @IBOutlet var textFields: [UITextField]!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet var textFields: [UITextBox]!
+    @IBOutlet weak var userNameTextField: UITextBox!
+    @IBOutlet weak var passwordTextField: UITextBox!
+    @IBOutlet weak var emailTextField: UITextBox!
+    @IBOutlet weak var regionTextField: UITextBox!
+    @IBOutlet weak var tipsTextField: UITextBox!
+    @IBOutlet weak var answerTextField: UITextBox!
     
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    var possibleInputs:Inputs = []
+    
+    /*
     func checkRequiredTextFields() {
         for textfield in textFields{
             if textfield.text!.isEmpty {
@@ -30,11 +37,73 @@ class RegistTableViewController: UITableViewController {
             return
         }
         
+        
     }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        doneBarButton.enabled = false
+        
+        /// 验证用户名
+        let userValidator = AJWValidator(type: AJWValidatorType.String)
+        userValidator.addValidationToEnsureMinimumLength(3, invalidMessage: "最小3位")
+        userValidator.addValidationToEnsureMaximumLength(16, invalidMessage: "最大16位")
+        userNameTextField.ajw_attachValidator(userValidator)
+        
+        userValidator.validatorStateChangedHandler = ({ (state:AJWValidatorState) -> Void in
+            switch state {
+            case AJWValidatorState.ValidationStateValid:
+                self.userNameTextField.highlightState = UITextBoxHighlightState.Default
+                self.possibleInputs.unionInPlace(Inputs.userName)
+            default:
+                let errorMsg = userValidator.errorMessages.first as! String
+                self.userNameTextField.highlightState = UITextBoxHighlightState.Wrong(errorMsg)
+                self.possibleInputs.subtractInPlace(Inputs.userName)
+            }
+            self.doneBarButton.enabled = self.possibleInputs.isAllValidate()
+        })
+        /**
+        验证密码
+        */
+        let pwdValidator = AJWValidator(type: AJWValidatorType.String)
+        pwdValidator.addValidationToEnsureMinimumLength(6, invalidMessage: "最小6位")
+        pwdValidator.addValidationToEnsureMaximumLength(16, invalidMessage: "最大16位")
+        passwordTextField.ajw_attachValidator(pwdValidator)
+        
+        pwdValidator.validatorStateChangedHandler = ({ (state:AJWValidatorState) -> Void in
+            switch state {
+            case AJWValidatorState.ValidationStateValid:
+                self.passwordTextField.highlightState = UITextBoxHighlightState.Default
+                self.possibleInputs.unionInPlace(Inputs.password)
+            default:
+                let errorMsg = pwdValidator.errorMessages.first as! String
+                self.passwordTextField.highlightState = UITextBoxHighlightState.Wrong(errorMsg)
+                self.possibleInputs.subtractInPlace(Inputs.password)
+            }
+            self.doneBarButton.enabled = self.possibleInputs.isAllValidate()
+        })
+        
+        /**
+        验证邮箱
+        */
+        let emailValidator = AJWValidator(type: AJWValidatorType.String)
+        emailValidator.addValidationToEnsureValidEmailWithInvalidMessage("邮箱格式不对")
+        emailTextField.ajw_attachValidator(emailValidator)
+        
+        emailValidator.validatorStateChangedHandler = ({ (state:AJWValidatorState) -> Void in
+            switch state {
+            case AJWValidatorState.ValidationStateValid:
+                self.emailTextField.highlightState = UITextBoxHighlightState.Default
+                self.possibleInputs.unionInPlace(Inputs.email)
+            default:
+                let errorMsg = emailValidator.errorMessages.first as! String
+                self.emailTextField.highlightState = UITextBoxHighlightState.Wrong(errorMsg)
+                self.possibleInputs.subtractInPlace(Inputs.email)
+            }
+            self.doneBarButton.enabled = self.possibleInputs.isAllValidate()
+        })
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,14 +122,40 @@ class RegistTableViewController: UITableViewController {
     }
     
     @IBAction func registDone(sender: UIBarButtonItem) {
-        checkRequiredTextFields()
+        //显示一个载入提示
+        self.pleaseWait()
         
-//        let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: UIAlertControllerStyle.Alert)
-//        let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (_) -> Void in
-//            
-//        }
-//        alert.addAction(action)
-//        self.presentViewController(alert, animated: true, completion: nil)
+        //建立用户AVObject
+        let user = AVObject(className: "HBUser")
+        user["user"] = self.userNameTextField.text
+        user["password"] = self.passwordTextField.text
+        user["email"] = self.emailTextField.text
+        user["region"] = self.regionTextField.text
+        user["tips"] = self.tipsTextField.text
+        user["answer"] = self.answerTextField.text
+        
+        //执行查询
+        let query = AVQuery(className: "HBUser")
+        query.whereKey("user", equalTo: self.userNameTextField.text)
+        
+        //如果查询到相关用户
+        query.getFirstObjectInBackgroundWithBlock { (obj, error) -> Void in
+            self.clearAllNotice()
+            if obj != nil {
+                self.errorNotice("用户已注册")
+                self.userNameTextField.becomeFirstResponder()
+                self.doneBarButton.enabled = false
+            }else{
+                user.saveInBackgroundWithBlock({ (succed, error) -> Void in
+                    if succed {
+                        self.successNotice("用户成功注册")
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }else{
+                        print(error)
+                    }
+                })
+            }
+        }
     }
 
     // MARK: - Table view data source

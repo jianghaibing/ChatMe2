@@ -23,12 +23,13 @@ extension UIView {
 class LoginViewController: UIViewController,JSAnimatedImagesViewDataSource {
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var background: JSAnimatedImagesView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         background.dataSource = self
         
-
+        
+        
     }
     
     @IBAction func login(sender: UIButton) {
